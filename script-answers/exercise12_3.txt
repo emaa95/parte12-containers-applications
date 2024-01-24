@@ -1,0 +1,60 @@
+#Paso 1
+docker start -i elated_heyrovsky
+
+#Paso2
+
+root@78df911afdb8:/# apt-get update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:3 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1346 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [109 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1057 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [44.6 kB]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [1617 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]                                                                
+Get:11 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]                                                                
+Get:12 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]                                                                     
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1322 kB]                                                         
+Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1624 kB]                                                             
+Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [50.5 kB]                                                       
+Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [1650 kB]                                                       
+Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [50.4 kB]                                                           
+Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [28.1 kB]                                                       
+Fetched 29.1 MB in 22s (1295 kB/s)                                                                                                              
+Reading package lists... Done
+
+#Paso 3
+root@78df911afdb8:/# apt-get -y install nano
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  hunspell
+The following NEW packages will be installed:
+  nano
+0 upgraded, 1 newly installed, 0 to remove and 8 not upgraded.
+Need to get 280 kB of archives.
+After this operation, 881 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 nano amd64 6.2-1 [280 kB]
+Fetched 280 kB in 2s (178 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package nano.
+(Reading database ... 4393 files and directories currently installed.)
+Preparing to unpack .../archives/nano_6.2-1_amd64.deb ...
+Unpacking nano (6.2-1) ...
+Setting up nano (6.2-1) ...
+update-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group editor) doesn't exist
+update-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/pico.1.gz because associated file /usr/share/man/man1/nano.1.gz (of link group pico) doesn't exist
+
+#Paso 4 
+root@78df911afdb8:/# nano /usr/src/app/index.js
+
+console.log('Hello World')
+
+ctrl + o
+ctrl + x
+
