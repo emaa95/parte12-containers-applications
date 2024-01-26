@@ -1,4 +1,5 @@
 const express = require('express');
+const redis = requiere('../redis');
 const router = express.Router();
 
 const configs = require('../util/config')
