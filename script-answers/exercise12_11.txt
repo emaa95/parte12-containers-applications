@@ -1,0 +1,54 @@
+#Paso 1 
+
+docker compose -f docker-compose.dev.yml up
+
+time="2024-01-26T18:47:02-03:00" level=warning msg="Found orphan containers ([todo-backend-app-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."    
+[+] Running 2/0
+ ✔ Container todo-backend-mongo-1  Created                                                                                0.0s 
+ ✔ Container todo-backend-redis-1  Created                                                                                0.0s 
+Attaching to mongo-1, redis-1
+
+#Paso 2
+
+docker exec -it todo-backend-redis-1 bash
+root@2cfb397bbf48:/data# 
+
+#Paso 3
+
+root@2cfb397bbf48:/data# redis-cli
+127.0.0.1:6379> 
+
+#Paso 4
+
+127.0.0.1:6379> KEYS *
+
+1) "added_todos"
+
+#Paso 5
+
+127.0.0.1:6379> GET addded_todos
+(nil)
+
+#Paso 6
+
+127.0.0.1:6379> SET added_todos 9001
+OK
+
+#Paso 7
+
+127.0.0.1:6379> GET added_todos
+"9002"
+
+#Paso 8 
+
+127.0.0.1:6379> DEL added_todos
+(integer) 1
+
+#Paso 9
+
+127.0.0.1:6379> GET added_todos
+"1"
+
+exit
+
+
