@@ -63,3 +63,7 @@ typings/
 #mongo
 
 mongo_data
+
+#redis
+
+redis_data
